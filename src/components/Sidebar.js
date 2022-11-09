@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Sidebar() {
-  return (
-    <div className='bg-stone-200'>Sidebar</div>
-  )
+  return <div className="bg-stone-200">Sidebar</div>;
 }

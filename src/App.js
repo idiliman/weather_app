@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Content from "./components/Content";
 import Navi from "./components/Navi";
 import Sidebar from "./components/Sidebar";
 
@@ -68,17 +68,19 @@ export default function App() {
     //   </header>
     // </div>
 
-    <div className="flex">
-      <div>
-        <Navi />
+    <container className="flex my-10 mx-5 max-w-full max-h-full">
+      <div className="grow basis-6/12">
+        <header>
+          <Header />
+        </header>
+        <main className="flex">
+          <Navi />
+          <Content />
+        </main>
       </div>
-      <div>
-        <Header />
-        <Main />
-      </div>
-      <div>
+      <div className="basis-4/12">
         <Sidebar />
       </div>
-    </div>
+    </container>
   );
 }
