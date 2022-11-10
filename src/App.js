@@ -73,7 +73,7 @@ export default function App() {
         <header>
           <Header />
         </header>
-        <main className="flex">
+        <main className="flex mt-4">
           <Navi />
           <Content />
         </main>
