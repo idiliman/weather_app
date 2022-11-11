@@ -11,7 +11,7 @@ export default function Header() {
         <BeachAccessIcon fontSize="inherit" />
       </logo>
 
-      <nav className="flex grow p-2 ml-5">
+      <nav className="flex grow p-2 ml-11">
         <logo className="flex items-center mr-2">
           <img
             src={getAvatarUrl()}
