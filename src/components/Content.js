@@ -11,7 +11,7 @@ export default function Content() {
       {/* Top content */}
       <div className="flex justify-between">
         {/* Weather */}
-        <div className="flex flex-col grow-0 justify-around w-100 h-80 py-1 px-9 border-solid border-2 border-slate-200 rounded-lg bg-cover" style={{backgroundImage:`url(https://img.freepik.com/free-vector/gradient-japanese-temple-with-sun_52683-44985.jpg?w=1060&t=st=1668142131~exp=1668142731~hmac=0a354c61a81a42d81933fb540c6e91d716d55d7dd42e38a7d56172adaccbe2ea)`}}>
+        <div className="flex flex-col grow-0 justify-around w-100 h-80 py-1 px-9 border-solid border-2 border-slate-200 rounded-lg bg-cover" style={{backgroundImage:`url()`}}>
           {/* Info */}
           <div className="flex items-center p-2">
             <FilterDramaIcon fontSize="large" />
@@ -45,7 +45,7 @@ export default function Content() {
         </div>
 
         {/* Air quality */}
-        <div className="flex flex-col grow-0 justify-around w-100 h-80 py-1 px-9 border-solid border-2 border-slate-200 rounded-lg bg-cover" style={{backgroundImage:`url(https://img.freepik.com/free-vector/blue-sky-with-clouds-background-elegant_1017-26302.jpg?w=1060&t=st=1668142451~exp=1668143051~hmac=d316abbe91bc98fe4a7fc84a3914df31682c5c611148d00c4c85a542c2fea7da)`}}>
+        <div className="flex flex-col grow-0 justify-around w-100 h-80 py-1 px-9 border-solid border-2 border-slate-200 rounded-lg bg-cover" style={{backgroundImage:`url()`}}>
           <div className="flex items-center p-2">
             <AirIcon fontSize="large" />
             <div className="text-sm ml-2">
@@ -69,7 +69,9 @@ export default function Content() {
       {/* Bottom content */}
       <div className="flex justify-between mt-11">
         {/* Temp */}
-        <div className="">Temp</div>
+        <div className="">
+        Temp
+        </div>
         {/* Forecast weather */}
         <div className="">Forecast weather</div>
       </div>
