@@ -10,7 +10,7 @@ export default function Navi() {
     <div className="basis-1/12 h-screen flex flex-col justify-between">
       {/* Navigation */}
       <ul className="flex flex-col text-2xl space-y-11 mx-auto">
-        <li className=" transition ease-out delay-110 hover:bg-orange-400 rounded-xl pt-0.5 pb-0.5 px-2 hover:rounded-xl hover:scale-110 active:translate-y-1">
+        <li className=" transition ease-out delay-110 bg-orange-400 rounded-xl pt-0.5 pb-0.5 px-2 hover:rounded-xl hover:scale-110 active active:translate-y-1">
           <BarChartIcon fontSize="inherit" className="mb-1.5" />
         </li>
         <li className="transition ease-out delay-110 hover:bg-orange-400 rounded-xl pt-0.5 pb-0.5 px-2 hover:rounded-xl hover:scale-110 active:translate-y-1">
