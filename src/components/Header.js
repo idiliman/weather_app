@@ -19,7 +19,7 @@ export default function Header() {
           />
         </logo>
 
-        <div className="flex flex-col justify-center pl-2">
+        <div className="flex flex-col item-center pl-2">
           <p className="text-2xl">Hello,</p>
           <p className="text-3xl font-medium">Username</p>
         </div>

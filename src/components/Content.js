@@ -1,6 +1,7 @@
 import React from "react";
 import FilterDramaIcon from "@mui/icons-material/FilterDrama";
 import AirIcon from "@mui/icons-material/Air";
+import ProgressBar from "./ProgressBar";
 
 // https://www.freepik.com/free-vector/gradient-japanese-temple-with-sun_9925868.htm?query=cloudy%20cartoon
 // https://www.freepik.com/free-vector/torii-gate-fuji-mountain_9925876.htm
@@ -11,7 +12,10 @@ export default function Content() {
       {/* Top content */}
       <div className="flex justify-between">
         {/* Weather */}
-        <div className="flex flex-col grow-0 justify-around w-100 h-80 py-1 px-9 border-solid border-2 border-slate-200 rounded-lg bg-cover" style={{backgroundImage:`url()`}}>
+        <div
+          className="flex flex-col grow-0 justify-around w-100 h-80 py-1 px-9 border-solid border-2 border-slate-200 rounded-lg bg-cover"
+          style={{ backgroundImage: `url()` }}
+        >
           {/* Info */}
           <div className="flex items-center p-2">
             <FilterDramaIcon fontSize="large" />
@@ -29,15 +33,15 @@ export default function Content() {
 
           {/* Weather detail eg: Pressure, visibility */}
           <div className="flex justify-between space-x-4 items-center h-20">
-            <div className="text-center py-2 px-5 border-solid border-2 rounded-lg border-slate-200">
+            <div className="bg-black text-white text-center py-2 px-5 border-solid border-2 rounded-lg border-slate-200">
               <p>Pressure</p>
               <p>800mb</p>
             </div>
-            <div className="text-center py-2 px-5 border-solid border-2 rounded-lg border-slate-200">
+            <div className="bg-lime-500 text-white text-center py-2 px-5 border-solid border-2 rounded-lg border-slate-200">
               <p>visibility</p>
               <p>4.3 km</p>
             </div>
-            <div className="text-center py-2 px-5 border-solid border-2 rounded-lg border-slate-200">
+            <div className="text-black text-center py-2 px-5 border-solid border-2 rounded-lg border-slate-200">
               <p>Humidity</p>
               <p>87%</p>
             </div>
@@ -45,7 +49,10 @@ export default function Content() {
         </div>
 
         {/* Air quality */}
-        <div className="flex flex-col grow-0 justify-around w-100 h-80 py-1 px-9 border-solid border-2 border-slate-200 rounded-lg bg-cover" style={{backgroundImage:`url()`}}>
+        <div
+          className="flex flex-col grow-0 justify-around w-100 h-80 py-1 px-9 border-solid border-2 border-slate-200 rounded-lg bg-cover"
+          style={{ backgroundImage: `url()` }}
+        >
           <div className="flex items-center p-2">
             <AirIcon fontSize="large" />
             <div className="text-sm ml-2">
@@ -59,9 +66,14 @@ export default function Content() {
             <p className="text-md p-0.5">West Wind</p>
           </div>
 
-          <div className="flex justify-between items-center w-80 h-20 p-3 border-solid border-2 rounded-lg border-slate-200">
-            <p>Good</p>
-            <p>Hazardous</p>
+          <div className="flex flex-col items-center space-y-4 w-80 h-20 p-3 border-solid border-2 rounded-lg border-slate-200">
+            <div className="flex space-x-44">
+              <p>Good</p>
+              <p>Hazardous</p>
+            </div>
+            <div className="text-center w-72 text-orange-400">
+              <ProgressBar />
+            </div>
           </div>
         </div>
       </div>
@@ -69,9 +81,7 @@ export default function Content() {
       {/* Bottom content */}
       <div className="flex justify-between mt-11">
         {/* Temp */}
-        <div className="">
-        Temp
-        </div>
+        <div className="">Temp</div>
         {/* Forecast weather */}
         <div className="">Forecast weather</div>
       </div>
