@@ -11,22 +11,13 @@ import Stack from "@mui/material/Stack";
 import Fade from "@mui/material/Fade";
 
 export default function App() {
-  // const [weatherData, setWeatherData] = useState([]);
-  // const [city, setCity] = useState("");
+  const [weatherData, setWeatherData] = useState([]);
 
-  // const apiKey = "4a798db9c043f7e754baeab23e77d730";
-  // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  const pullWeatherData = (data) => {
+    setWeatherData(data);
+  };
 
-  // const getWeather = (event) => {
-  //   if (event.key === "Enter") {
-  //     fetch(apiUrl)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setWeatherData(data);
-  //         setCity("");
-  //       });
-  //   }
-  // };
+  
 
   return (
     // <div className="w-screen h-screen " style={{backgroundImage:`url(https://www.transparenttextures.com/patterns/cubes.png)`}}>
@@ -71,11 +62,11 @@ export default function App() {
     <container className="flex my-10 mx-5 max-w-full max-h-full">
       <div className="grow basis-6/12">
         <header>
-          <Header />
+          <Header onAdd={pullWeatherData} />
         </header>
         <main className="flex mt-4">
           <Navi />
-          <Content />
+          <Content cityName={weatherData.name}/>
         </main>
       </div>
       <div className="basis-4/12">

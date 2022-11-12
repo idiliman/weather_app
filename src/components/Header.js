@@ -1,10 +1,81 @@
-import React from "react";
-import getAvatarUrl from "../function/getAvatarUrl";
+import React, { useState, useEffect } from "react";
+import AvatarUrl from "../function/AvatarUrl";
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
+import axios from "axios";
 
-export default function Header() {
+export default function Header(props) {
+  const [isLoading, setLoading] = useState(false);
+  const [city, setCity] = useState("");
+
+  const apiKey = "4a798db9c043f7e754baeab23e77d730";
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  const defaultApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kuala Lumpur&units=metric&appid=${apiKey}`;
+
+  const getWeather = async (event) => {
+    if (event.key === "Enter") {
+      try {
+        setLoading(true);
+
+        event.preventDefault();
+
+        console.log("Fetching weather");
+        const response = await axios.get(apiUrl);
+        const weather = response.data;
+
+        props.onAdd(weather);
+        console.log(weather);
+      } catch (err) {
+        console.log(err, "Error fetching weather");
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
+
+  const getDefaultWeather = async () => {
+    try {
+      setLoading(true);
+
+      console.log("Fetching weather");
+      const response = await axios.get(defaultApiUrl);
+      const weather = response.data;
+
+      props.onAdd(weather);
+      console.log(weather);
+
+    } catch (err) {
+      console.log(err, "Error fetching weather");
+
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    console.log("Mounting weather");
+    getDefaultWeather();
+  },[]);
+
+
+  // const getWeather = (event) => {
+  //   if (event.key === "Enter") {
+  //     fetch(apiUrl)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setCity("");
+  //         props.onAdd(data);
+  //       });
+  //     event.preventDefault();
+  //   }
+  // };
+
+  const handleChange = async (event) => {
+    await setCity(event.target.value);
+    event.preventDefault();
+  };
+
   return (
     <header className="flex bg-white items-center p-3">
       <logo className="flex items-center p-2 mr-2 text-4xl">
@@ -14,7 +85,7 @@ export default function Header() {
       <nav className="flex grow p-2 ml-11">
         <logo className="flex items-center mr-2">
           <img
-            src={getAvatarUrl()}
+            src={AvatarUrl()}
             className="w-12 h-12 rounded-full bg-gray-200 shadow ring-2 ring-indigo-400 ring-offset-2 ring-opacity-50"
           />
         </logo>
@@ -31,10 +102,14 @@ export default function Header() {
       >
         <input
           type="text"
-          placeholder="Search City"
+          placeholder="Enter City"
           className=" text-black p-3 w-80 outline-none rounded-lg mr-4 bg-slate-100"
+          onChange={handleChange}
+          value={city}
+          onKeyPress={getWeather}
         />
-        <button className="border-none -ml-11">
+
+        <button className="border-none -ml-11" onClick={getWeather}>
           <SearchIcon color="inherit" />
         </button>
       </form>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function getApiKey() {
+export default function ApiKey() {
   return (
     <div>getApiKey</div>
   )
