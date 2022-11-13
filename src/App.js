@@ -59,7 +59,7 @@ export default function App() {
     //   </header>
     // </div>
 
-    <container className="flex my-10 mx-5 max-w-full max-h-full">
+    <container className="flex mt-8 mb-24 mx-5 max-w-screen max-h-screen">
       <div className="grow basis-6/12">
         <header>
           <Header onAdd={pullWeatherData} />

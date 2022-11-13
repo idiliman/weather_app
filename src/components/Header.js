@@ -58,19 +58,6 @@ export default function Header(props) {
     getDefaultWeather();
   },[]);
 
-
-  // const getWeather = (event) => {
-  //   if (event.key === "Enter") {
-  //     fetch(apiUrl)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setCity("");
-  //         props.onAdd(data);
-  //       });
-  //     event.preventDefault();
-  //   }
-  // };
-
   const handleChange = async (event) => {
     await setCity(event.target.value);
     event.preventDefault();

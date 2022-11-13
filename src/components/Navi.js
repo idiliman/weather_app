@@ -7,7 +7,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 export default function Navi() {
   return (
-    <div className="basis-1/12 h-screen flex flex-col justify-between">
+    <div className="basis-1/12  flex flex-col justify-between">
       {/* Navigation */}
       <ul className="flex flex-col text-2xl space-y-11 mx-auto">
         <li className="pt-0.5 pb-0.5 px-2 transition ease-out delay-110 bg-orange-400 rounded-xl hover:rounded-xl hover:scale-110 active:translate-y-1">
